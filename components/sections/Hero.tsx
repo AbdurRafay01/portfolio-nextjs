@@ -18,7 +18,7 @@ export function Hero() {
           </h1>
 
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-foreground">
-            Software Engineer
+            Software Engineer - Backend
           </h2>
 
           <p className="max-w-2xl mx-auto text-muted-foreground text-base md:text-lg leading-relaxed">

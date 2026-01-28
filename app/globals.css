@@ -217,6 +217,22 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
+
+  /* Logo styles */
+  .logo-wrapper {
+    @apply inline-flex items-center;
+    /* Ensure crisp SVG rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .logo-wrapper svg {
+    /* Prevent blurry rendering on non-retina */
+    shape-rendering: geometricPrecision;
+    /* Ensure proper scaling */
+    max-height: 100%;
+    width: auto;
+  }
 }
 
 /* ============================================
