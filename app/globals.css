@@ -1,26 +1,348 @@
+/**
+ * Global Styles & Design System Integration
+ *
+ * This file works with tailwind.config.ts which serves as the
+ * single source of truth for design tokens. CSS variables defined
+ * here provide theme-aware values that the Tailwind config references.
+ */
+
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Reference the Tailwind config file */
+@config "../tailwind.config.ts";
 
+/* Dark mode variant */
+@custom-variant dark (&:is(.dark *));
+
+/**
+ * Theme Token Registration
+ * Maps CSS variables to Tailwind's theme system for IntelliSense support
+ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Typography */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Core semantic colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Brand colors */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* UI colors */
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Status colors */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* Shadow color */
+  --color-shadow: var(--shadow-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================
+   CSS CUSTOM PROPERTIES - LIGHT MODE (Default)
+   ============================================ */
+:root {
+  /* Background & Foreground */
+  --background: #fafafa;
+  --foreground: #18181b;
+
+  /* Card */
+  --card: #ffffff;
+  --card-foreground: #18181b;
+
+  /* Primary - Indigo */
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+
+  /* Muted */
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+
+  /* Accent - Sky Blue */
+  --accent: #0ea5e9;
+  --accent-foreground: #ffffff;
+
+  /* Borders & Inputs */
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #4f46e5;
+
+  /* Status Colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+
+  /* Neo-Brutalism Shadow */
+  --shadow-color: #18181b;
+
+  /* Border Radius - Neo-Brutalism uses minimal rounding */
+  --radius: 0.25rem;
+}
+
+/* ============================================
+   CSS CUSTOM PROPERTIES - DARK MODE
+   ============================================ */
+.dark {
+  /* Background & Foreground */
+  --background: #09090b;
+  --foreground: #fafafa;
+
+  /* Card */
+  --card: #18181b;
+  --card-foreground: #fafafa;
+
+  /* Primary - Lighter Indigo for dark mode */
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+
+  /* Muted */
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+
+  /* Accent - Cyan for dark mode */
+  --accent: #22d3ee;
+  --accent-foreground: #18181b;
+
+  /* Borders & Inputs */
+  --border: #3f3f46;
+  --input: #3f3f46;
+  --ring: #6366f1;
+
+  /* Status Colors - Brighter for dark mode */
+  --success: #34d399;
+  --warning: #fbbf24;
+  --error: #f87171;
+
+  /* Neo-Brutalism Shadow - Subtle white glow */
+  --shadow-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================
+   BASE LAYER - Global Element Styles
+   ============================================ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================================
+   COMPONENT LAYER - Reusable Component Styles
+   ============================================ */
+@layer components {
+  /* Neo-Brutalism Card */
+  .neo-card {
+    @apply border-2 border-border bg-card;
+    box-shadow: 4px 4px 0px 0px var(--shadow-color);
+  }
+
+  /* Neo-Brutalism Button Base */
+  .neo-btn {
+    @apply inline-flex items-center justify-center;
+    @apply font-bold uppercase tracking-wider;
+    @apply border-2 border-border;
+    @apply transition-all duration-200;
+    box-shadow: 4px 4px 0px 0px var(--shadow-color);
+  }
+
+  .neo-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--shadow-color);
+  }
+
+  .neo-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--shadow-color);
+  }
+
+  /* Section container */
+  .section-container {
+    @apply py-20 md:py-32 px-4;
+  }
+
+  /* Section title styling */
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-4;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+}
+
+/* ============================================
+   UTILITY LAYER - Custom Utilities
+   ============================================ */
+@layer utilities {
+  /* Neo-Brutalism Shadows */
+  .neo-shadow-sm {
+    box-shadow: 2px 2px 0px 0px var(--shadow-color);
+  }
+
+  .neo-shadow {
+    box-shadow: 4px 4px 0px 0px var(--shadow-color);
+  }
+
+  .neo-shadow-lg {
+    box-shadow: 6px 6px 0px 0px var(--shadow-color);
+  }
+
+  .neo-shadow-xl {
+    box-shadow: 8px 8px 0px 0px var(--shadow-color);
+  }
+
+  /* Neo-Brutalism Hover Effect */
+  .neo-hover {
+    @apply transition-all duration-200;
+  }
+
+  .neo-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--shadow-color);
+  }
+
+  /* Neo-Brutalism Active State */
+  .neo-active:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--shadow-color);
+  }
+
+  /* Text highlight */
+  .text-highlight {
+    @apply text-primary font-semibold;
+  }
+
+  /* Link styles */
+  .link-primary {
+    @apply text-primary hover:text-primary/80 underline-offset-4 hover:underline;
+  }
+
+  .link-accent {
+    @apply text-accent hover:text-accent/80;
+  }
+
+  /* Focus ring utility */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+    @apply focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Animation delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
+
+  /* Hide scrollbar utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ============================================
+   SELECTION STYLING
+   ============================================ */
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* ============================================
+   SMOOTH THEME TRANSITIONS
+   ============================================ */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
 }
