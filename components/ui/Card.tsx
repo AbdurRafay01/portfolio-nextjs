@@ -13,71 +13,61 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          "border-2 border-foreground bg-card p-6",
+          "border-foreground bg-card border-2 p-6",
           "neo-shadow",
           hover && "neo-hover",
-          className
+          className,
         )}
         {...props}
       />
     );
-  }
+  },
 );
 
 Card.displayName = "Card";
 
 const CardHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        className={cn("mb-4", className)}
-        {...props}
-      />
-    );
-  }
+    return <div ref={ref} className={cn("mb-4", className)} {...props} />;
+  },
 );
 
 CardHeader.displayName = "CardHeader";
 
-const CardTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement>>(
-  ({ className, ...props }, ref) => {
-    return (
-      <h3
-        ref={ref}
-        className={cn("text-xl font-bold uppercase tracking-wider", className)}
-        {...props}
-      />
-    );
-  }
-);
+const CardTitle = forwardRef<
+  HTMLHeadingElement,
+  HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => {
+  return (
+    <h3
+      ref={ref}
+      className={cn("text-xl font-bold tracking-wider uppercase", className)}
+      {...props}
+    />
+  );
+});
 
 CardTitle.displayName = "CardTitle";
 
-const CardDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, ...props }, ref) => {
-    return (
-      <p
-        ref={ref}
-        className={cn("text-sm text-muted-foreground", className)}
-        {...props}
-      />
-    );
-  }
-);
+const CardDescription = forwardRef<
+  HTMLParagraphElement,
+  HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => {
+  return (
+    <p
+      ref={ref}
+      className={cn("text-muted-foreground text-sm", className)}
+      {...props}
+    />
+  );
+});
 
 CardDescription.displayName = "CardDescription";
 
 const CardContent = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        className={cn("", className)}
-        {...props}
-      />
-    );
-  }
+    return <div ref={ref} className={cn("", className)} {...props} />;
+  },
 );
 
 CardContent.displayName = "CardContent";
@@ -91,9 +81,16 @@ const CardFooter = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
         {...props}
       />
     );
-  }
+  },
 );
 
 CardFooter.displayName = "CardFooter";
 
-export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter };
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+};

@@ -5,7 +5,14 @@ import { Card, CardContent } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
-import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 
 interface FormData {
   name: string;
@@ -30,7 +37,9 @@ export function Contact() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -80,7 +89,7 @@ export function Contact() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -91,31 +100,31 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-4 bg-secondary/30">
+    <section id="contact" className="bg-secondary/30 px-4 py-20 md:py-32">
       <div className="container mx-auto max-w-6xl">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-4">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-3xl font-black uppercase md:text-4xl lg:text-5xl">
             <span className="text-foreground">Get In</span>{" "}
             <span className="text-gradient">Touch</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto" />
-          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+          <div className="bg-primary mx-auto h-1 w-24" />
+          <p className="text-muted-foreground mx-auto mt-6 max-w-2xl">
             Have a project in mind or want to discuss opportunities? Feel free
             to reach out!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
           {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="space-y-6 lg:col-span-2">
             <Card>
-              <CardContent className="p-6 flex items-center gap-4">
-                <div className="p-3 bg-primary border-2 border-border">
-                  <Mail className="h-6 w-6 text-primary-foreground" />
+              <CardContent className="flex items-center gap-4 p-6">
+                <div className="bg-primary border-border border-2 p-3">
+                  <Mail className="text-primary-foreground h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider">
+                  <p className="text-muted-foreground text-sm tracking-wider uppercase">
                     Email
                   </p>
                   <a
@@ -129,12 +138,12 @@ export function Contact() {
             </Card>
 
             <Card>
-              <CardContent className="p-6 flex items-center gap-4">
-                <div className="p-3 bg-primary border-2 border-border">
-                  <Phone className="h-6 w-6 text-primary-foreground" />
+              <CardContent className="flex items-center gap-4 p-6">
+                <div className="bg-primary border-border border-2 p-3">
+                  <Phone className="text-primary-foreground h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider">
+                  <p className="text-muted-foreground text-sm tracking-wider uppercase">
                     Phone
                   </p>
                   <a
@@ -148,12 +157,12 @@ export function Contact() {
             </Card>
 
             <Card>
-              <CardContent className="p-6 flex items-center gap-4">
-                <div className="p-3 bg-primary border-2 border-border">
-                  <MapPin className="h-6 w-6 text-primary-foreground" />
+              <CardContent className="flex items-center gap-4 p-6">
+                <div className="bg-primary border-border border-2 p-3">
+                  <MapPin className="text-primary-foreground h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider">
+                  <p className="text-muted-foreground text-sm tracking-wider uppercase">
                     Location
                   </p>
                   <p className="text-foreground font-bold">Karachi, Pakistan</p>
@@ -162,13 +171,13 @@ export function Contact() {
             </Card>
 
             {/* Availability status */}
-            <div className="p-4 border-2 border-success bg-success/10 neo-shadow-sm">
+            <div className="border-success bg-success/10 neo-shadow-sm border-2 p-4">
               <div className="flex items-center gap-2">
                 <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-success"></span>
+                  <span className="bg-success absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
+                  <span className="bg-success relative inline-flex h-3 w-3 rounded-full"></span>
                 </span>
-                <p className="text-success font-bold text-sm uppercase tracking-wider">
+                <p className="text-success text-sm font-bold tracking-wider uppercase">
                   Available for new opportunities
                 </p>
               </div>
@@ -180,11 +189,11 @@ export function Contact() {
             <Card hover={false}>
               <CardContent className="p-6 md:p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-bold uppercase tracking-wider mb-2"
+                        className="mb-2 block text-sm font-bold tracking-wider uppercase"
                       >
                         Name
                       </label>
@@ -197,7 +206,7 @@ export function Contact() {
                         error={!!errors.name}
                       />
                       {errors.name && (
-                        <p className="mt-1 text-sm text-error flex items-center gap-1">
+                        <p className="text-error mt-1 flex items-center gap-1 text-sm">
                           <AlertCircle className="h-4 w-4" />
                           {errors.name}
                         </p>
@@ -207,7 +216,7 @@ export function Contact() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-bold uppercase tracking-wider mb-2"
+                        className="mb-2 block text-sm font-bold tracking-wider uppercase"
                       >
                         Email
                       </label>
@@ -221,7 +230,7 @@ export function Contact() {
                         error={!!errors.email}
                       />
                       {errors.email && (
-                        <p className="mt-1 text-sm text-error flex items-center gap-1">
+                        <p className="text-error mt-1 flex items-center gap-1 text-sm">
                           <AlertCircle className="h-4 w-4" />
                           {errors.email}
                         </p>
@@ -232,7 +241,7 @@ export function Contact() {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-bold uppercase tracking-wider mb-2"
+                      className="mb-2 block text-sm font-bold tracking-wider uppercase"
                     >
                       Subject
                     </label>
@@ -245,7 +254,7 @@ export function Contact() {
                       error={!!errors.subject}
                     />
                     {errors.subject && (
-                      <p className="mt-1 text-sm text-error flex items-center gap-1">
+                      <p className="text-error mt-1 flex items-center gap-1 text-sm">
                         <AlertCircle className="h-4 w-4" />
                         {errors.subject}
                       </p>
@@ -255,7 +264,7 @@ export function Contact() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-bold uppercase tracking-wider mb-2"
+                      className="mb-2 block text-sm font-bold tracking-wider uppercase"
                     >
                       Message
                     </label>
@@ -269,7 +278,7 @@ export function Contact() {
                       error={!!errors.message}
                     />
                     {errors.message && (
-                      <p className="mt-1 text-sm text-error flex items-center gap-1">
+                      <p className="text-error mt-1 flex items-center gap-1 text-sm">
                         <AlertCircle className="h-4 w-4" />
                         {errors.message}
                       </p>
@@ -284,12 +293,12 @@ export function Contact() {
                   >
                     {isSubmitting ? (
                       <>
-                        <span className="animate-spin mr-2">⏳</span>
+                        <span className="mr-2 animate-spin">⏳</span>
                         Sending...
                       </>
                     ) : (
                       <>
-                        <Send className="h-5 w-5 mr-2" />
+                        <Send className="mr-2 h-5 w-5" />
                         Send Message
                       </>
                     )}
@@ -297,17 +306,18 @@ export function Contact() {
 
                   {/* Status Messages */}
                   {submitStatus === "success" && (
-                    <div className="p-4 border-2 border-success bg-success/10 flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-success" />
+                    <div className="border-success bg-success/10 flex items-center gap-2 border-2 p-4">
+                      <CheckCircle className="text-success h-5 w-5" />
                       <p className="text-success font-bold">
-                        Message sent successfully! I&apos;ll get back to you soon.
+                        Message sent successfully! I&apos;ll get back to you
+                        soon.
                       </p>
                     </div>
                   )}
 
                   {submitStatus === "error" && (
-                    <div className="p-4 border-2 border-error bg-error/10 flex items-center gap-2">
-                      <AlertCircle className="h-5 w-5 text-error" />
+                    <div className="border-error bg-error/10 flex items-center gap-2 border-2 p-4">
+                      <AlertCircle className="text-error h-5 w-5" />
                       <p className="text-error font-bold">
                         Something went wrong. Please try again.
                       </p>

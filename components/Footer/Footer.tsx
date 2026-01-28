@@ -30,9 +30,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t-2 border-border bg-background">
-      <div className="container mx-auto px-4 md:px-8 py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="border-border bg-background border-t-2">
+      <div className="container mx-auto px-4 py-8 md:px-8">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
@@ -43,11 +43,11 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label={social.label}
                 className={cn(
-                  "p-2 border-2 border-border rounded-sm",
+                  "border-border rounded-sm border-2 p-2",
                   "bg-background hover:bg-primary",
                   "text-foreground hover:text-primary-foreground",
                   "transition-all duration-200",
-                  "neo-shadow-sm neo-hover neo-active"
+                  "neo-shadow-sm neo-hover neo-active",
                 )}
               >
                 <social.icon className="h-5 w-5" />
@@ -56,10 +56,10 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="text-sm text-muted-foreground font-mono">
+          <p className="text-muted-foreground font-mono text-sm">
             <span className="text-primary">&copy;</span> {currentYear}{" "}
-            <span className="text-foreground font-semibold">Abdur Rafay</span>. All
-            rights reserved.
+            <span className="text-foreground font-semibold">Abdur Rafay</span>.
+            All rights reserved.
           </p>
         </div>
       </div>

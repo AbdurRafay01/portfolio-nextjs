@@ -40,12 +40,18 @@ export function NeonLetter({ letter, delay, className }: NeonLetterProps) {
       className={cn(
         "h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12",
         "transition-all duration-1000 ease-out",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
-        className
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
+        className,
       )}
     >
       <defs>
-        <linearGradient id={`letterGradient-${letter}`} x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient
+          id={`letterGradient-${letter}`}
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="100%"
+        >
           <stop offset="0%" stopColor="var(--primary)" />
           <stop offset="100%" stopColor="var(--accent)" />
         </linearGradient>
@@ -59,7 +65,7 @@ export function NeonLetter({ letter, delay, className }: NeonLetterProps) {
         strokeLinejoin="round"
         className={cn(
           "transition-all duration-1000",
-          isVisible ? "stroke-dashoffset-0" : ""
+          isVisible ? "stroke-dashoffset-0" : "",
         )}
         style={{
           strokeDasharray: 150,

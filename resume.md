@@ -34,6 +34,7 @@ and Spring-Boot framework and how the data interaction is done using the Hiberna
 ● Created kubernetes YAML conf files for the deployment of API services and also managed CI/CD pipeline
 code in AWS CodePipeline for dev and prod container images updates.
 ```
+
 ## Backend Engineer | Auxin Security | Karachi, Pakistan | May 2022 – Jan 2024
 
 ```
@@ -65,11 +66,10 @@ systematic pre-deployment verification process that identifies potential runtime
 environment-specific configurations early in the development cycle, significantly reducing production
 deployment risks.
 ```
+
 ## SKILLS
 
 **Programming** : Python, Java, JavaScript, TypeScript, Bash
 **Databases** : Postgresql, Mysql, Mongodb
 **Frameworks** : FastAPI, Spring Boot, Node.js, Express.js
 **DevOps** : Docker, CI/CD, Jenkins, AWS, Kubernetes.
-
-

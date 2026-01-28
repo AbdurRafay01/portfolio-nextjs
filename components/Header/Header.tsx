@@ -18,13 +18,13 @@ import { ThemeToggle } from "./ThemeToggle";
 export function Header() {
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b-2 border-border"
+      className="bg-background/90 border-border fixed top-0 right-0 left-0 z-50 border-b-2 backdrop-blur-md"
       role="banner"
     >
       <div className="container mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo - vertically centered */}
-          <div className="flex items-center h-full py-3">
+          <div className="flex h-full items-center py-3">
             <AnimatedLogo />
           </div>
 

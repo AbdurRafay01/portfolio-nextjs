@@ -34,10 +34,10 @@ export function BrushScriptLogo({ className }: BrushScriptLogoProps) {
       href="#"
       className={cn(
         "inline-flex items-center",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-        "focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "focus-visible:ring-ring focus-visible:ring-2 focus-visible:outline-none",
+        "focus-visible:ring-offset-background focus-visible:ring-offset-2",
         "rounded-sm",
-        className
+        className,
       )}
       aria-label="Rafay - Navigate to homepage"
     >
@@ -45,13 +45,13 @@ export function BrushScriptLogo({ className }: BrushScriptLogoProps) {
         viewBox="0 0 140 55"
         className={cn(
           // Responsive height with auto width to maintain aspect ratio
-          "h-8 w-auto",           // Mobile: 32px
-          "sm:h-9",               // Small: 36px
-          "md:h-10",              // Medium: 40px
-          "lg:h-11",              // Large: 44px
+          "h-8 w-auto", // Mobile: 32px
+          "sm:h-9", // Small: 36px
+          "md:h-10", // Medium: 40px
+          "lg:h-11", // Large: 44px
           // Smooth animation
           "transition-all duration-700 ease-out",
-          isAnimated ? "opacity-100" : "opacity-0"
+          isAnimated ? "opacity-100" : "opacity-0",
         )}
         role="img"
         aria-labelledby="logoTitle logoDesc"
@@ -60,7 +60,9 @@ export function BrushScriptLogo({ className }: BrushScriptLogoProps) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <title id="logoTitle">Rafay</title>
-        <desc id="logoDesc">Rafay personal brand logo in brush script style</desc>
+        <desc id="logoDesc">
+          Rafay personal brand logo in brush script style
+        </desc>
 
         <defs>
           {/* Brand gradient */}
@@ -107,7 +109,8 @@ export function BrushScriptLogo({ className }: BrushScriptLogoProps) {
           style={{
             strokeDasharray: 220,
             strokeDashoffset: isAnimated ? 0 : 220,
-            transition: "stroke-dashoffset 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s",
+            transition:
+              "stroke-dashoffset 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s",
           }}
         />
 
@@ -128,7 +131,8 @@ export function BrushScriptLogo({ className }: BrushScriptLogoProps) {
           style={{
             strokeDasharray: 160,
             strokeDashoffset: isAnimated ? 0 : 160,
-            transition: "stroke-dashoffset 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s",
+            transition:
+              "stroke-dashoffset 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s",
           }}
         />
 
@@ -148,7 +152,8 @@ export function BrushScriptLogo({ className }: BrushScriptLogoProps) {
           style={{
             strokeDasharray: 130,
             strokeDashoffset: isAnimated ? 0 : 130,
-            transition: "stroke-dashoffset 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s",
+            transition:
+              "stroke-dashoffset 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s",
           }}
         />
 
@@ -169,7 +174,8 @@ export function BrushScriptLogo({ className }: BrushScriptLogoProps) {
           style={{
             strokeDasharray: 160,
             strokeDashoffset: isAnimated ? 0 : 160,
-            transition: "stroke-dashoffset 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s",
+            transition:
+              "stroke-dashoffset 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s",
           }}
         />
 
@@ -190,7 +196,8 @@ export function BrushScriptLogo({ className }: BrushScriptLogoProps) {
           style={{
             strokeDasharray: 160,
             strokeDashoffset: isAnimated ? 0 : 160,
-            transition: "stroke-dashoffset 1.4s cubic-bezier(0.25, 0.1, 0.25, 1) 0.9s",
+            transition:
+              "stroke-dashoffset 1.4s cubic-bezier(0.25, 0.1, 0.25, 1) 0.9s",
           }}
         />
 
@@ -208,7 +215,8 @@ export function BrushScriptLogo({ className }: BrushScriptLogoProps) {
           style={{
             strokeDasharray: 190,
             strokeDashoffset: isAnimated ? 0 : 190,
-            transition: "stroke-dashoffset 1s cubic-bezier(0.25, 0.1, 0.25, 1) 1.5s",
+            transition:
+              "stroke-dashoffset 1s cubic-bezier(0.25, 0.1, 0.25, 1) 1.5s",
           }}
         />
       </svg>
