@@ -8,14 +8,16 @@ type ButtonBaseProps = {
   size?: "sm" | "md" | "lg";
 };
 
-export type ButtonProps = ButtonBaseProps & ButtonHTMLAttributes<HTMLButtonElement>;
+export type ButtonProps = ButtonBaseProps &
+  ButtonHTMLAttributes<HTMLButtonElement>;
 
-export type ButtonLinkProps = ButtonBaseProps & AnchorHTMLAttributes<HTMLAnchorElement>;
+export type ButtonLinkProps = ButtonBaseProps &
+  AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const buttonStyles = (
   variant: ButtonBaseProps["variant"] = "default",
   size: ButtonBaseProps["size"] = "md",
-  className?: string
+  className?: string,
 ) =>
   cn(
     // Base styles - Neo-Brutalism
@@ -50,7 +52,7 @@ const buttonStyles = (
         variant === "link",
     },
 
-    className
+    className,
   );
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -62,7 +64,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 Button.displayName = "Button";
@@ -77,7 +79,7 @@ const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 ButtonLink.displayName = "ButtonLink";

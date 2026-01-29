@@ -41,7 +41,7 @@ export function AnimatedSection({
       className={cn(
         "transition-all duration-700 ease-out",
         animationClasses[animation],
-        className
+        className,
       )}
       style={{ transitionDelay: `${delay}ms` }}
     >

@@ -5,7 +5,7 @@ import { NeonLetter } from "./NeonLetter";
 export function AnimatedLogo() {
   const letters = ["R", "A", "F", "A", "Y"];
   const baseDelay = 200; // Start delay in ms
-  const letterDelay = 300; // Delay between each letter
+  const letterDelay = 400; // Delay between each letter
 
   return (
     <a href="#" className="flex items-center gap-0.5 md:gap-1">

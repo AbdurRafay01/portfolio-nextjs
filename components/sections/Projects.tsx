@@ -64,28 +64,28 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 md:py-32 px-4 bg-secondary/30">
+    <section id="projects" className="bg-secondary/30 px-4 py-20 md:py-32">
       <div className="container mx-auto max-w-6xl">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-4">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-3xl font-black uppercase md:text-4xl lg:text-5xl">
             <span className="text-foreground">Featured</span>{" "}
             <span className="text-gradient">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto" />
-          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+          <div className="bg-primary mx-auto h-1 w-24" />
+          <p className="text-muted-foreground mx-auto mt-6 max-w-2xl">
             A showcase of my work in backend development, AI applications, and
             cloud infrastructure.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {projects.map((project, index) => (
             <Card key={index} className="group overflow-hidden">
               {/* Project Icon/Image Placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-accent/10 border-b-2 border-border flex items-center justify-center">
-                <project.icon className="h-20 w-20 text-primary opacity-80 group-hover:scale-110 transition-transform duration-300" />
+              <div className="from-primary/10 to-accent/10 border-border flex h-48 items-center justify-center border-b-2 bg-gradient-to-br">
+                <project.icon className="text-primary h-20 w-20 opacity-80 transition-transform duration-300 group-hover:scale-110" />
               </div>
 
               <CardHeader>
@@ -113,7 +113,7 @@ export function Projects() {
                   variant="outline"
                   size="sm"
                 >
-                  <Github className="h-4 w-4 mr-2" />
+                  <Github className="mr-2 h-4 w-4" />
                   Code
                 </ButtonLink>
                 <ButtonLink
@@ -122,7 +122,7 @@ export function Projects() {
                   rel="noopener noreferrer"
                   size="sm"
                 >
-                  <ExternalLink className="h-4 w-4 mr-2" />
+                  <ExternalLink className="mr-2 h-4 w-4" />
                   Live Demo
                 </ButtonLink>
               </CardFooter>
@@ -131,7 +131,7 @@ export function Projects() {
         </div>
 
         {/* View More CTA */}
-        <div className="text-center mt-12">
+        <div className="mt-12 text-center">
           <ButtonLink
             href="https://github.com/arafay"
             target="_blank"
@@ -139,7 +139,7 @@ export function Projects() {
             variant="secondary"
             size="lg"
           >
-            <Github className="h-5 w-5 mr-2" />
+            <Github className="mr-2 h-5 w-5" />
             View More on GitHub
           </ButtonLink>
         </div>

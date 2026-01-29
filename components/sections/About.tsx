@@ -34,21 +34,21 @@ const experiences = [
 
 export function About() {
   return (
-    <section id="about" className="py-20 md:py-32 px-4">
+    <section id="about" className="px-4 py-20 md:py-32">
       <div className="container mx-auto max-w-6xl">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-4">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-3xl font-black uppercase md:text-4xl lg:text-5xl">
             <span className="text-gradient">About</span>{" "}
             <span className="text-foreground">Me</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto" />
+          <div className="bg-primary mx-auto h-1 w-24" />
         </div>
 
         {/* Summary Card */}
-        <Card className="mb-12 bg-secondary/50">
+        <Card className="bg-secondary/50 mb-12">
           <CardContent className="p-6 md:p-8">
-            <p className="text-lg leading-relaxed text-foreground">
+            <p className="text-foreground text-lg leading-relaxed">
               Software Engineer with over{" "}
               <span className="text-primary font-bold">3+ years</span> of
               experience in software development. Remarkable projects include{" "}
@@ -58,32 +58,30 @@ export function About() {
               for source code vulnerability detection. Well-versed in system
               integration and capable of developing robust, performant
               applications using{" "}
-              <span className="text-primary font-bold">
-                Python, Java
-              </span>{" "}
-              and other modern technologies.
+              <span className="text-primary font-bold">Python, Java</span> and
+              other modern technologies.
             </p>
           </CardContent>
         </Card>
 
         {/* Education */}
         <div className="mb-12">
-          <h3 className="text-xl md:text-2xl font-bold uppercase mb-6 flex items-center gap-3">
-            <GraduationCap className="h-6 w-6 text-primary" />
+          <h3 className="mb-6 flex items-center gap-3 text-xl font-bold uppercase md:text-2xl">
+            <GraduationCap className="text-primary h-6 w-6" />
             Education
           </h3>
           <Card>
             <CardContent className="p-6">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+              <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <h4 className="text-lg font-bold text-primary">
+                  <h4 className="text-primary text-lg font-bold">
                     NED University of Engineering and Technology
                   </h4>
                   <p className="text-foreground">
                     Bachelors of Science, Computer Science
                   </p>
                 </div>
-                <div className="flex items-center gap-4 text-muted-foreground text-sm">
+                <div className="text-muted-foreground flex items-center gap-4 text-sm">
                   <span className="flex items-center gap-1">
                     <MapPin className="h-4 w-4" /> Karachi, Pakistan
                   </span>
@@ -98,8 +96,8 @@ export function About() {
 
         {/* Work Experience */}
         <div>
-          <h3 className="text-xl md:text-2xl font-bold uppercase mb-6 flex items-center gap-3">
-            <Briefcase className="h-6 w-6 text-primary" />
+          <h3 className="mb-6 flex items-center gap-3 text-xl font-bold uppercase md:text-2xl">
+            <Briefcase className="text-primary h-6 w-6" />
             Work Experience
           </h3>
           <div className="space-y-6">
@@ -107,14 +105,14 @@ export function About() {
               <Card key={index} className="overflow-hidden">
                 <CardContent className="p-6">
                   {/* Header */}
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
+                  <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                     <div>
-                      <h4 className="text-lg font-bold text-primary">
+                      <h4 className="text-primary text-lg font-bold">
                         {exp.title}
                       </h4>
                       <p className="text-accent font-bold">{exp.company}</p>
                     </div>
-                    <div className="flex items-center gap-4 text-muted-foreground text-sm">
+                    <div className="text-muted-foreground flex items-center gap-4 text-sm">
                       <span className="flex items-center gap-1">
                         <MapPin className="h-4 w-4" /> {exp.location}
                       </span>
@@ -129,11 +127,9 @@ export function About() {
                     {exp.highlights.map((highlight, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2 text-muted-foreground"
+                        className="text-muted-foreground flex items-start gap-2"
                       >
-                        <span className="text-primary mt-1">
-                          ▸
-                        </span>
+                        <span className="text-primary mt-1">▸</span>
                         {highlight}
                       </li>
                     ))}

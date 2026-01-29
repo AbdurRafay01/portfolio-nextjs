@@ -39,31 +39,31 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-32 px-4">
+    <section id="skills" className="px-4 py-20 md:py-32">
       <div className="container mx-auto max-w-6xl">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-4">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-3xl font-black uppercase md:text-4xl lg:text-5xl">
             <span className="text-foreground">Technical</span>{" "}
             <span className="text-gradient">Skills</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto" />
-          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+          <div className="bg-primary mx-auto h-1 w-24" />
+          <p className="text-muted-foreground mx-auto mt-6 max-w-2xl">
             Technologies and tools I use to bring ideas to life.
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, index) => (
             <Card key={index} className="group">
               <CardContent className="p-6">
                 {/* Category Header */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-primary/10 border-2 border-border">
-                    <category.icon className="h-6 w-6 text-primary" />
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="bg-primary/10 border-border border-2 p-2">
+                    <category.icon className="text-primary h-6 w-6" />
                   </div>
-                  <h3 className="font-bold uppercase tracking-wider text-foreground">
+                  <h3 className="text-foreground font-bold tracking-wider uppercase">
                     {category.title}
                   </h3>
                 </div>
@@ -74,7 +74,7 @@ export function Skills() {
                     <Badge
                       key={skill}
                       variant="outline"
-                      className="hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors cursor-default"
+                      className="hover:bg-primary hover:text-primary-foreground hover:border-primary cursor-default transition-colors"
                     >
                       {skill}
                     </Badge>
@@ -86,11 +86,11 @@ export function Skills() {
         </div>
 
         {/* Skill Level Visualization */}
-        <div className="mt-16 p-8 border-2 border-border neo-shadow bg-secondary/30">
-          <h3 className="text-xl font-bold uppercase mb-6 text-center">
+        <div className="border-border neo-shadow bg-secondary/30 mt-16 border-2 p-8">
+          <h3 className="mb-6 text-center text-xl font-bold uppercase">
             Core Competencies
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {[
               { skill: "Backend Development", level: 95 },
               { skill: "API Design & Integration", level: 90 },
@@ -104,9 +104,9 @@ export function Skills() {
                   <span className="font-bold">{item.skill}</span>
                   <span className="text-primary font-mono">{item.level}%</span>
                 </div>
-                <div className="h-3 border-2 border-border bg-background">
+                <div className="border-border bg-background h-3 border-2">
                   <div
-                    className="h-full bg-gradient-to-r from-primary to-accent transition-all duration-1000"
+                    className="from-primary to-accent h-full bg-gradient-to-r transition-all duration-1000"
                     style={{ width: `${item.level}%` }}
                   />
                 </div>
