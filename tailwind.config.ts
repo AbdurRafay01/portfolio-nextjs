@@ -35,8 +35,8 @@ const config: Config = {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",
           // Static values for reference/fallback
-          light: "#818cf8", // indigo-400
-          dark: "#4f46e5", // indigo-600
+          light: "#81d4f8", // indigo-400
+          dark: "#81b3f8", // indigo-600
         },
 
         // Secondary color
@@ -49,8 +49,8 @@ const config: Config = {
         accent: {
           DEFAULT: "var(--accent)",
           foreground: "var(--accent-foreground)",
-          light: "#22d3ee", // cyan-400
-          dark: "#0ea5e9", // sky-500
+          light: "#ee2285 ", // pink-400
+          dark: "#8a0b48", // sky-500
         },
 
         // Muted/subtle elements
